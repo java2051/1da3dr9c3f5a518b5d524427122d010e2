@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<honey-mapping>
-	 <class name="Cat" table="CATS" discriminator-value="C">
-		<id></id>
-	
-		
-	 
-	 </class>
-</honey-mapping>
