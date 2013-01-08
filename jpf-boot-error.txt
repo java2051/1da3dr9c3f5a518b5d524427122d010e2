@@ -1,0 +1,94 @@
+JPF Application boot failed.
+Fri Dec 14 17:33:09 CST 2012
+
+-----------------------------------------------
+Exception details.
+
+Class: java.lang.Error
+Message: Unresolved compilation problems: 
+	The method getMappingCalculator() is undefined for the type CorePlugin
+	The method getColumnProcessor() is undefined for the type CorePlugin
+
+
+Stack trace:
+
+com.honey.general.databases.GeneralIntrospectPlugin.doStart(GeneralIntrospectPlugin.java:37)
+org.java.plugin.Plugin.start(Plugin.java:82)
+org.java.plugin.PluginManager.startPlugin(PluginManager.java:325)
+org.java.plugin.standard.StandardPluginManager.activatePlugin(StandardPluginManager.java:407)
+org.java.plugin.standard.StandardPluginManager.getPlugin(StandardPluginManager.java:217)
+com.honey.core.utils.ObjectFactory.getExtensionPlugin(ObjectFactory.java:118)
+com.honey.core.utils.ObjectFactory.getNewExtension(ObjectFactory.java:49)
+com.honey.core.utils.ObjectFactory.getExtensionClass(ObjectFactory.java:83)
+com.honey.core.CorePlugin.introspectedSchema(CorePlugin.java:147)
+com.honey.core.CorePlugin.startApplication(CorePlugin.java:77)
+org.java.plugin.boot.Boot.boot(Boot.java:418)
+org.java.plugin.boot.Boot.main(Boot.java:315)
+
+-----------------------------------------------
+System properties:
+
+awt.toolkit=sun.awt.windows.WToolkit
+file.encoding=UTF-8
+file.encoding.pkg=sun.io
+file.separator=\
+java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+java.awt.printerjob=sun.awt.windows.WPrinterJob
+java.class.path=D:\workspace-generator\generator_v3.1\bin;D:\workspace-generator\generator_v3.1\lib\commons-logging.jar;D:\workspace-generator\generator_v3.1\lib\jxp.jar;D:\workspace-generator\generator_v3.1\lib\plugin0.7.jar;D:\Program Files (x86)\MyEclipse10\Common\plugins\org.junit_3.8.2.v3_8_2_v20100427-1100\junit.jar
+java.class.version=50.0
+java.endorsed.dirs=D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\endorsed
+java.ext.dirs=D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+java.home=D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre
+java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+java.library.path=D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/Program Files (x86)/MyEclipse10/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;D:/Program Files (x86)/MyEclipse10/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;D:/Program Files (x86)/MyEclipse10/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/lib/i386;D:\Program Files (x86)\Java\jdk1.6.0_35\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;D:\Program Files\EmEditor;C:\Program Files\TortoiseGit\bin
+java.runtime.name=Java(TM) SE Runtime Environment
+java.runtime.version=1.6.0_13-b03
+java.specification.name=Java Platform API Specification
+java.specification.vendor=Sun Microsystems Inc.
+java.specification.version=1.6
+java.vendor=Sun Microsystems Inc.
+java.vendor.url=http://java.sun.com/
+java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport.cgi
+java.version=1.6.0_13
+java.vm.info=mixed mode
+java.vm.name=Java HotSpot(TM) Client VM
+java.vm.specification.name=Java Virtual Machine Specification
+java.vm.specification.vendor=Sun Microsystems Inc.
+java.vm.specification.version=1.0
+java.vm.vendor=Sun Microsystems Inc.
+java.vm.version=11.3-b02
+jpf.boot.mode=shell
+line.separator=
+
+org.java.plugin.jpf-version=1.5.1
+os.arch=x86
+os.name=Windows Vista
+os.version=6.1
+path.separator=;
+sun.arch.data.model=32
+sun.boot.class.path=D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\resources.jar;D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\rt.jar;D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\sunrsasign.jar;D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\jsse.jar;D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\jce.jar;D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\charsets.jar;D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\classes
+sun.boot.library.path=D:\Program Files (x86)\MyEclipse10\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin
+sun.cpu.endian=little
+sun.cpu.isalist=pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86
+sun.desktop=windows
+sun.io.unicode.encoding=UnicodeLittle
+sun.java.launcher=SUN_STANDARD
+sun.jnu.encoding=GBK
+sun.management.compiler=HotSpot Client Compiler
+sun.os.patch.level=Service Pack 1
+user.country=CN
+user.dir=D:\workspace-generator\generator_v3.1
+user.home=C:\Users\Administrator
+user.language=zh
+user.name=Administrator
+user.timezone=Asia/Shanghai
+user.variant=
+
+-----------------------------------------------
+Runtime info:
+
+Memory TOTAL / FREE / MAX: 5177344 / 4413328 / 66650112
+Available processors: 4
+System class loader: sun.misc.Launcher$AppClassLoader@6b97fd
+Thread context class loader: sun.misc.Launcher$AppClassLoader@6b97fd
+Security manager: null

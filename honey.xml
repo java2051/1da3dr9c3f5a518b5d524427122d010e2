@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<honey-configuration version="v3.0">
+	<description>自动代码生成工具</description>
+	<!-- 
+		内置两个系统环境变量
+		${localpath} : 运行的根目录
+		${localPluginsPath} : 插件所在的目录
+	-->
+	<import>${localpath}/config/properties.xml</import>
+	<import>${localpath}/config/jdbcConnection.xml</import>
+	
+	
+	
+	<!-- 
+	<import>${localpath}/config/properties.xml</import>
+	<import>${localpath}/config/jdbcConnection.xml</import>
+	<import>${localpath}/config/honey.sqlscript.plugin.xml</import>
+	<import>${localpath}/config/honey.mysql5.plugin.xml</import>
+	<import>${localpath}/config/standard.calculator.xml</import>
+	<import>${localpath}/config/honey.generator.java.plugin.xml</import>
+	<import>${localpath}/config/honey.generator.mybatis.plugin.xml</import>
+	<import>${localpath}/config/honey.serializable.plugin.xml</import>
+	<import>${localpath}/config/honey.eclipse.formatter.plugin.xml</import>
+	<import>${localpath}/config/honey.spring.plugin.xml</import>
+	<import>${localpath}/config/honey.generator.sampleservice.xml</import>
+	<import>${localpath}/config/honey.solr.plugin.xml</import>
+	 -->
+	<context-environment>
+		<project-environment>
+			<targetProjectWorkspace value="D:\workspaces\new-house-core" />
+			<targetSrcDirectory value="D:\workspaces\new-house-core\src" />
+			<javaRootPackeg value="com.fte.newhouse" />
+			<charset value="utf-8" />
+			<!-- 
+				存储类型 分为下面几种: 
+					1> Backup(备份存储, 把当前的文件备份,然后新内容覆盖当前文件) 
+					2> Multi(多文件存储,不改变当前文件内容,新文件内容生成新文件) 
+					3> Override(强制覆盖存储, 慎用该方式)
+					4> Checking(验证存储,验证成功覆盖文件,验证失败跳过存储)
+					5> CheckingAndBackup(验证存储,验证成功覆盖文件,验证失败备份当前的文件,然后新内容覆盖当前文件)
+					5-1> CheckingBackup 与CheckingAndBackup一致
+					5-2> CAB 与CheckingAndBackup一致
+					6> CheckingAndMulti(验证文件存储,文件验证通过覆盖文件,如果验证失败,不改变当前文件内容,新文件内容生成新文件)
+					6-1> CheckingMulti 与CheckingAndMulti一致
+					6-2> CAM 与CheckingAndMulti一致
+			-->
+			<storage value="Checking" />
+			<forcePrimitiveType value="false" /><!-- value值为:1 , true , on  启用基础类型. -->
+		</project-environment>
+		<mapping-environment>
+			<import> </import>
+			
+			<table>
+				<tableName>fte_new_estate</tableName> 
+				<enableUseSqlSession></enableUseSqlSession>
+			</table>
+			
+			
+			
+			
+		</mapping-environment>
+	</context-environment>
+</honey-configuration>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honey-configuration version="v3.0">
+	<description>数据库连接配置</description>
+
+	<jdbcConnection>
+		<property key="driver" value="${jdbc.driverClassName}" />
+		<property key="library" value="${jdbc.library}" />
+		<property key="url" value="${jdbc.url}" />
+		<property key="username" value="${jdbc.username}" />
+		<property key="password" value="${jdbc.password}" />
+		<property key="catalog" value="" />
+		<property key="schema" value="${jdbc.schema}" />
+	</jdbcConnection>
+</honey-configuration>

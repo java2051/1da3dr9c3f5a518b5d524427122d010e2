@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honey-configuration version="v3.0">
+	<description>
+		honey.mysql5.plugin 插件的配置
+	</description>
+	<plugin id="honey.standard.calculator" useModel="" >
+		<!-- 
+			useModel 只有一个值, 如果是Obfuscate表示使用混淆计算器
+		 -->
+		 
+		 
+		<!-- 使用正则表达式替换无意义的字符串,详细的使用参阅String对象的replaceAll -->
+		<replaceRegex value="fte_" /> <!-- replaceAll方法的 regex参数 -->
+		<replacement value="" /> <!-- replaceAll方法的 replacement参数 -->
+	</plugin>
+</honey-configuration>

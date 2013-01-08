@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="honey.mysql5.plugin" version="0.0.1"
+	class="com.honey.mysql5.Mysql5Plugin">
+	<attributes>
+		<attribute id="driver" value="d" />
+		<attribute id="url" value="u" />
+		<attribute id="username" value="n" />
+		<attribute id="password" value="p" />
+		<attribute id="library" value="l" />
+	</attributes>
+	<requires>
+		<import plugin-id="honey.configuration.plugin" />
+		<import plugin-id="honey.general.databases" />
+	</requires>
+	
+	<runtime>
+		<library id="core" path="classes/" type="code">
+			<doc caption="API documentation">
+				<doc-ref path="api/index.html" caption="javadoc" />
+			</doc>
+			<export prefix="*" />
+		</library>
+		<!-- 
+		<library id="mysqlDbDriver"
+			path="lib/mysql-connector-java-5.0.8-bin.jar" type="code" />
+		-->
+	</runtime>
+	<extension 
+		plugin-id="honey.configuration.plugin" 
+		point-id="ConfigurationHolder"
+		id="MysqlConfigurationHolder">
+		<parameter id="isHolder" value="true" />
+	</extension>
+
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedTableInformation"
+		id="Mysql5IntrospectedTableInformation">
+		<parameter id="class" value="com.honey.mysql5.Mysql5TableInformationExtension" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedProcedureInformation"
+		id="Mysql5ProcedureInformationExtension">
+		<parameter id="class" value="com.honey.mysql5.Mysql5ProcedureInformationExtension" />
+	</extension>
+
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedAllTableColumns"
+		id="Mysql5IntrospectedAllTableColumns">
+		<parameter id="class" value="com.honey.mysql5.Mysql5AllTableColumnsExtension" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedPrimaryKeyColumns"
+		id="Mysql5IntrospectedPrimaryKeyColumns">
+		<parameter id="class" value="com.honey.mysql5.Mysql5PrimaryKeyColumnsExtension" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectProcedureParameters"
+		id="Mysql5IntrospectedProcedureParameters">
+		<parameter id="class" value="com.honey.mysql5.Mysql5ProcedureParametersExtension" />
+	</extension>
+	
+</plugin>
