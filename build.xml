@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="generator_v3.0" default="build-boot" basedir=".">
+	<property name="projct-name" value="generator_v3.0"/>
+	
+		
+	<!--
+		===================================================================
+		        	编译所有的plugin
+		===================================================================
+	-->	
+	<property name="honey.configuration.plugin" value="honey.configuration.plugin"/>
+	<property name="honey.mysql5.plugin" value="honey.mysql5.plugin"/>
+	<property name="honey.core.plugin" value="honey.core.plugin"/>
+	<property name="honey.general.databases.introspected" value="honey.general.databases.introspected"/>
+	
+	
+	<target name="build-all-plugin"  depends="build-boot" description="编译所有的plugin">
+		
+		<ant dir="./plugins/${honey.mysql5.plugin}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="build" />
+		<ant dir="./plugins/${honey.general.databases.introspected}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="build" />
+		
+		<!-- core.plugin 必须最后编译 -->
+		<ant dir="./plugins/${honey.configuration.plugin}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="build" />
+		<ant dir="./plugins/${honey.core.plugin}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="build" />
+	</target>
+	
+	<!-- 清除所有的编译的plugin -->
+	<target name="clean-all-plugin"  depends="clean" description="清除所有的plugin">
+		<ant dir="./plugins/${honey.configuration.plugin}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="clean" />
+		<ant dir="./plugins/${honey.mysql5.plugin}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="clean" />
+		<ant dir="./plugins/${honey.general.databases.introspected}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="clean" />
+		
+		
+		<ant dir="./plugins/${honey.core.plugin}" antfile="build.xml"  inheritall="false" inheritrefs="false" target="clean" />
+	</target>
+	
+	
+	<!-- 重新设定plugins -->
+	<target name="reset-project"  depends="clean-all-plugin, clean" description="重新设定plugins">
+		<delete dir="temp" />
+	</target>
+	
+	<!-- 运行 -->
+	<target name="run-project"  description="Runs application">
+		<java 
+			classname="org.java.plugin.boot.Boot"
+			dir="."
+			fork="true"
+		>
+		<classpath refid="classpath"></classpath>
+		<classpath path="bin"></classpath>
+		</java>
+	</target>
+	
+	
+	
+	<!--
+		===================================================================
+		        	指定类库文件位置dd
+		===================================================================
+	-->
+		<property name="lib" value="lib"/>
+		
+	<!--
+		===================================================================
+		        	建立编译环境
+		===================================================================
+	-->	
+	<property name="class.dir" value="bin/"/>	<!--编译后class文件位置-->
+	<property name="src.boot.dir" value="boot/"/>		<!--源文件位置-->
+	<property name="src.encoding" value="UTF-8"/>
+	<property name="src.version" value="1.6"/>
+	<property name="compile.optimize" value="true"/>
+	<property name="debug" value="true"/>
+	
+	<path id="classpath">
+		<fileset dir="${lib}" includes="*.jar"/>
+		
+	</path>	
+	
+	
+	
+	<!--
+		===================================================================
+			        	编译源代码
+		===================================================================
+	-->	
+	<target name="build-boot"  depends="clean" description="编译${plugin-name}">
+		<mkdir dir="${class.dir}"/>
+		<javac target="${src.version}" 
+			encoding="${src.encoding}" 
+			destdir="${class.dir}" 
+			debug="${debug}"
+			optimize="${compile.optimize}" >
+			<src path="${src.boot.dir}" />
+			<classpath refid="classpath" />
+		</javac>		
+	</target>
+	<!-- 
+	<target name="jar-boot"  depends="build-boot">
+		<jar destfile="lib/boot.jar" basedir="${class.dir}">
+		</jar>
+		<delete dir="${class.dir}/org" />
+	</target>
+	-->
+	
+	<target name="clean" depends="" >
+		<delete includeEmptyDirs="true" verbose="true" >
+			<fileset dir="./bin"  >
+				<include name="**/*"/> 
+			</fileset>
+		</delete>
+		<delete file="lib/boot.jar" verbose="true"/>
+	</target>
+	
+	
+	
+</project>

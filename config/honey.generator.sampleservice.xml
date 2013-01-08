@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honey-configuration version="v3.0">
+	<description>
+		honey.generator.sampleservice插件的配置
+	</description>
+	<plugin id="honey.generator.sampleservice" >
+			<targetPackage value="com.fte.newhouse.service" /> <!-- service 包 -->
+			
+			<!-- 如果不配置本项那么使用targetPackage配置 -->
+			<interfacePackage value="com.fte.newhouse.service" />
+			<interfaceSuffix value="Service" /><!-- service接口类的后缀,如果为空不附加任何后缀名称,默认不添加任何后缀 -->
+			
+			<!-- 如果不配置本项那么在targetPackage配置项中增加imp -->
+			<implementsPackage value="com.fte.newhouse.service.imp" />
+			<implementsSuffix value="ServiceImp" /><!-- service实现类的后缀,如果为空不附加任何后缀名称,默认不添加任何后缀 -->
+	</plugin>
+</honey-configuration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honey-configuration version="v3.0">
+	<description>
+		honey.json.plugin 插件的配置文件.
+		如果要使用不通的json包,请在工程中导入对应的jar包.
+	</description>
+	
+	<plugin id="honey.spring.plugin">
+		<!-- 
+			spring的 ApplicationContext.xml文件地址, 特征如下:
+				1> 如果配置成文件夹系统将会在目录下查找 ApplicationContext.xml文件
+				2> 如果目录不存在创建目录
+				3> 如果文件不存在创建文件
+		-->
+		<ApplicationContext>D:\workspaces\new-house-site\WebRoot\WEB-INF\config\spring-context</ApplicationContext>
+		
+		<ApplicationContextDao>D:\workspaces\new-house-site\WebRoot\WEB-INF\config\spring-context\dao.xml</ApplicationContextDao>
+		
+		
+		
+	</plugin>
+</honey-configuration>

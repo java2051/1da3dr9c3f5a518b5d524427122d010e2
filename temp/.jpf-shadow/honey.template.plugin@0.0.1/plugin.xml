@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="honey.template.plugin" version="0.0.1"
+	class="com.honey.template.TemplatePlugin">
+	
+	<requires>
+		<import plugin-id="honey.core.plugin" />
+		<import plugin-id="honey.configuration.plugin" />
+	</requires>
+	
+	<runtime>
+		<library id="core" path="classes/" type="code">
+			<doc caption="API documentation">
+				<doc-ref path="api/index.html" caption="javadoc" />
+			</doc>
+			<export prefix="*" />
+		</library>
+	</runtime>
+
+	<extension 
+		plugin-id="honey.core.plugin" 
+		point-id="CodeGenerator"
+		id="com.honey.template.TemplateExtension">
+		<parameter id="class" value="com.honey.template.TemplateExtension"/>
+	</extension>
+	
+</plugin>
