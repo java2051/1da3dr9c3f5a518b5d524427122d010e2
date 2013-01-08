@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honey-configuration version="v3.0">
+	<description>
+		SQL92CreateScriptIntrospectPlugin 插件的配置
+	</description>
+	<plugin id="honey.sqlscript.introspecte" > 
+		<!-- 
+			数据库类型(不区分大小写),支持数据库类型名称如下:
+				sql92(数据库标准语句)
+				mysql
+				postgre
+				oracle
+				sqllite
+			如果不填写,默认使用sql92
+		-->
+		<vendor>sql92</vendor>
+		
+		<!--
+			是否在沙盒中运行脚本: true:如果支持沙盒那么在沙河中运行 false:不运行沙盒直接解析
+		 -->
+		<runSandbox>true</runSandbox>
+		
+		<!-- 
+			脚本文件路径, 建表语句请按照vendor中指定的数据库类型编写.
+			文件中包含建表/建视图/建存储过程的语句,其它的语句都不能包含.
+		 -->
+		<path fileCharacter="">d:/mysql.table.sql</path>
+		
+		
+		<!-- 
+			建表/建视图/建存储过程 脚本语句.
+			语句的写法按照vendor中指定的数据库语句写法
+		 -->
+		<script>
+			create table1(
+			
+			)
+		</script>
+		<script>
+			create table2(
+			
+			)
+		</script>
+		
+		<script>
+			create table3(
+			
+			)
+		</script>
+		
+		<script><![CDATA[
+			create table4(
+			sdf
+			)
+		]]></script>
+	</plugin>
+	
+</honey-configuration>

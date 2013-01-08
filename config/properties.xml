@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honey-configuration version="v3.0">
+	<description>系统配置</description>
+	
+	<properties>
+		<locations >
+			${localpath}/config/jdbc.properties
+		</locations>
+		
+		<entity name="jdbc.library" >
+			<![CDATA[
+				D:\workspace-generator\generator_v3.0\plugins\honey.mysql5.plugin\lib\mysql-connector-5.1.8.jar 
+			]]>
+		</entity>
+		<property key="mysqlPlugin" value="honey.mysql5.plugin" />
+	</properties>
+	
+</honey-configuration>

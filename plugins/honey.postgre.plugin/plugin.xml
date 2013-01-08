@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="honey.postgre.plugin" version="0.0.1"
+	class="com.honey.postgre.PostgrePlugin">
+	<attributes>
+		<attribute id="driver" value="d" />
+		<attribute id="url" value="u" />
+		<attribute id="username" value="n" />
+		<attribute id="password" value="p" />
+		<attribute id="library" value="l" />
+	</attributes>
+	<requires>
+		<import plugin-id="honey.configuration.plugin" />
+		<import plugin-id="honey.general.databases" />
+	</requires>
+	
+	<runtime>
+		<library id="core" path="classes/" type="code">
+			<doc caption="API documentation">
+				<doc-ref path="api/index.html" caption="javadoc" />
+			</doc>
+			<export prefix="*" />
+		</library>
+		<!-- 
+		<library id="mysqlDbDriver"
+			path="lib/mysql-connector-java-5.0.8-bin.jar" type="code" />
+		-->
+	</runtime>
+	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedTableInformation"
+		id="PostgreIntrospectedTableInformation">
+		<parameter id="class" value="com.honey.postgre.PostgreTableInformationExtension" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedProcedureInformation"
+		id="PostgreProcedureInformationExtension">
+		<parameter id="class" value="com.honey.postgre.PostgreProcedureInformationExtension" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedAllTableColumns"
+		id="PostgreIntrospectedAllTableColumns">
+		<parameter id="class" value="com.honey.postgre.PostgreAllTableColumnsExtension" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectedPrimaryKeyColumns"
+		id="PostgreIntrospectedPrimaryKeyColumns">
+		<parameter id="class" value="com.honey.postgre.PostgrePrimaryKeyColumnsExtension" />
+	</extension>
+	
+<!-- 	
+	<extension 
+		plugin-id="honey.general.databases" 
+		point-id="IntrospectProcedureParameters"
+		id="PostgreIntrospectedProcedureParameters">
+		<parameter id="class" value="com.honey.postgre.PostgreProcedureParametersExtension" />
+	</extension>
+-->	
+	
+</plugin>

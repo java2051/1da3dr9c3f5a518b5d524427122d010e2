@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="honey.general.databases" version="0.0.1" 
+	class="com.honey.general.databases.GeneralIntrospectPlugin">
+	
+	<requires>
+		<import plugin-id="honey.configuration.plugin" />
+		<import plugin-id="honey.core.plugin" />
+	</requires>
+	<runtime>
+		<library id="introspected" path="classes/" type="code">
+			<doc caption="API documentation">
+				<doc-ref path="api/index.html" caption="javadoc" />
+			</doc>
+			<export prefix="*" />
+		</library>
+	</runtime>
+
+	<extension 
+		plugin-id="honey.core.plugin" 
+		point-id="IntrospectSchema"
+		id="IntrospectedSchemaInformation">
+		<parameter id="class" value="com.honey.general.databases.extension.GeneralIntrospectSchema" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.core.plugin" 
+		point-id="IntrospectTableColumn"
+		id="introspectTableColumn">
+		<parameter id="class" value="com.honey.general.databases.extension.GeneralIntrospectTableColumn"/>
+	</extension>
+	
+	<extension 
+		plugin-id="honey.core.plugin" 
+		point-id="IntrospectProcedureParameter"
+		id="introspectProcedureParameter">
+		<parameter id="class" value="com.honey.general.databases.extension.GeneralIntrospectProcedureParameter" />
+	</extension>
+	
+	
+	
+	<!-- 表信息插入点 -->
+	<extension-point id="IntrospectedTableInformation">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 存储过程信息插入点 -->
+	<extension-point id="IntrospectedProcedureInformation">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<extension-point id="IntrospectedAllTableColumns">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<extension-point id="IntrospectedPrimaryKeyColumns">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<extension-point id="IntrospectedExportedKeyColumns">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<extension-point id="IntrospectedForeignKeyColumns">
+		<parameter-def id="class" />
+	</extension-point>
+
+	<extension-point id="IntrospectProcedureParameters">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	
+</plugin>

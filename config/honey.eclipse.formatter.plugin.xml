@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honey-configuration version="v3.0">
+	<description>
+		本类是读取eclipse的代码格式化风格文件,用于使用JDT格式化java代码.获取风格文件方式如下:
+			在eclipse菜单中 Window -> Preferences ->	Java -> Code Style ->Formatter
+		设定代码格式化参数,然后导出.把导出的文件路径写入到style参数中,JDT就会按照这个格式化方式格式化java代码.
+		
+		请主意profiles的version,低版本的version不被支持.
+	</description>
+	
+	<plugin id="honey.eclipse.formatter.plugin" 
+		formatter ="c/c++"
+		style =""
+	/>
+	<!--  
+		formatter是内置代码格式化风格, 参数有以下几种:
+			default 
+			c++ 或者 c 或者 c/c++ 或者 cStyle 
+			camel
+			spring
+		
+		style 是指定风格文件.生成风格文件方式如下:
+			在eclipse菜单中 Window -> Preferences ->	Java -> Code Style ->Formatter
+		
+	 -->
+</honey-configuration>

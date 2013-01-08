@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="honey.standard.calculator" version="0.0.1"
+	class="com.honey.calculator.CalculatorPlugin">
+	<requires>
+		<import plugin-id="honey.core.plugin" />
+		<import plugin-id="honey.configuration.plugin" />
+	</requires>
+	<runtime>
+		<library id="core" path="classes/" type="code">
+			<doc caption="API documentation">
+				<doc-ref path="api/index.html" caption="javadoc" />
+			</doc>
+			<export prefix="*" />
+		</library>
+	</runtime>
+	<extension 
+		plugin-id="honey.configuration.plugin" 
+		point-id="ConfigurationHolder"
+		id="CalculatorConfigurationHolder">
+		<parameter id="isHolder" value="true" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.core.plugin" 
+		point-id="JavaNameCalculator"
+		id="com.honey.calculator.StandardJavaNameCalculator">
+		<parameter id="class" value="com.honey.calculator.StandardJavaNameCalculator" />
+	</extension>
+
+	<extension 
+		plugin-id="honey.core.plugin" 
+		point-id="MappingCalculator"
+		id="com.honey.calculator.StandardMappingCalculator">
+		<parameter id="class" value="com.honey.calculator.StandardMappingCalculator" />
+	</extension>
+	
+	<extension 
+		plugin-id="honey.core.plugin" 
+		point-id="ColumnProcessor"
+		id="com.honey.calculator.ColumnProcessorCalculator">
+		<parameter id="class" value="com.honey.calculator.ColumnNameMappingCalculator" />
+	</extension>
+
+</plugin>

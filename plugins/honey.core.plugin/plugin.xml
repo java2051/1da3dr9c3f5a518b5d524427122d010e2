@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="honey.core.plugin" version="0.0.1"
+	class="com.honey.core.CorePlugin">
+	
+	<requires>
+		<import plugin-id="honey.configuration.plugin" />
+	</requires>
+	
+	<runtime>
+		<library id="core" path="classes/" type="code">
+			<doc caption="API documentation">
+				<doc-ref path="api/index.html" caption="javadoc" />
+			</doc>
+			<export prefix="*" />
+		</library>
+	</runtime>
+	
+	<!-- 插入点 : 开始运行系统  -->
+	<extension-point id="InitializationApplication">
+		<parameter-def id="class" />
+	</extension-point>
+
+	<!-- 插入点 : 中止运行系统  -->
+	<extension-point id="TerminationApplication">
+		<parameter-def id="class" />
+	</extension-point>	
+
+	<!-- 插入点 : 获取数据结构信息(表 视图 存储过程  ) -->
+	<extension-point id="IntrospectSchema">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 获取数据表字段信息 -->
+	<extension-point id="IntrospectTableColumn">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 获取存储过程参数 -->
+	<extension-point id="IntrospectProcedureParameter">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 持久层 -->
+	<extension-point id="PresentationLayer">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 业务层 -->
+	<extension-point id="BusinessLayer">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	
+	<!-- 插入点 : 添加session值监听器 -->
+	<extension-point id="AddSessionListener"></extension-point>
+	
+	<!-- 插入点 : 删除session值监听器 -->
+	<extension-point id="RemoveSessionListener"></extension-point>
+	
+	<!-- 插入点 : 文件生成器 -->
+	<extension-point id="CodeGenerator">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : java名称计算器 -->
+	<extension-point id="JavaNameCalculator">
+		<parameter-def id="class" />
+	</extension-point>
+
+	<!-- 插入点 : 数据库实体映射计算器 -->
+	<extension-point id="MappingCalculator">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 编译文件写入者 -->
+	<extension-point id="CompilationWriter">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 数据库列处理器 -->
+	<extension-point id="ColumnProcessor">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 编译文件写入者 -->
+	<extension-point id="CallbackCompilation">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 文件格式化插入点 -->
+	<extension-point id="CodeFormater">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 通知插件 -->
+	<extension-point id="Notify">
+		<parameter-def id="class" />
+	</extension-point>
+	
+	<!-- 插入点 : 计算代码特征插件 -->
+	<extension-point id="SourceCodeFeature">
+		<parameter-def id="class" />
+	</extension-point>
+		
+</plugin>
